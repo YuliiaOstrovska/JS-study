@@ -356,3 +356,170 @@ function createArrayOfNumbers(min, max) {
 // В циклі for використовувався метод push
   
   
+console.log('ЗАДАЧА: ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ');
+// Напиши функцію filterArray(numbers, value), яка приймає масив чисел (параметр numbers) і повертає новий масив, в якому будуть тільки ті елементи масиву numbers, які більші за значення параметра value (число).
+
+// Оголошена функція filterArray(numbers, value)
+// Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
+// Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
+// Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
+// Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
+// Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
+// Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+// В циклі for використовувався метод push
+
+function filterArray(numbers, value) {
+  
+ let newArray =[];
+for (let number of numbers) {
+ if (number > value) {
+   newArray.push(number);
+ }
+}
+return newArray
+}
+console.log('Метод includes(value)')
+// Метод includes(value) перевіряє, чи присутній в масиві елемент зі значенням value, і повертає true або false відповідно. Сфера застосування цього методу зводиться до ситуацій, коли необхідно перевірити, чи присутній елемент в масиві, і не важлива його позиція (індекс).
+
+// const planets = ["Earth", "Mars", "Venus"];
+
+// console.log(planets.includes("Earth")); // true
+// console.log(planets.includes("Mars")); // true
+// console.log(planets.includes("Venus")); // true
+// console.log(planets.includes("Jupiter")); // false
+
+const plane = ["Earth", "Mars", "Venus"];
+
+console.log(plane.includes("Earth")); // true
+console.log(plane.includes("Mars")); // true
+console.log(plane.includes("Venus")); // true
+console.log(plane.includes("Jupiter")); // false
+
+// console.log('Задача на пошук логіна. includs та тернарник')
+// // знайти логін
+// const logins = ['m4ngoDoge', 'k1widab3st', 'avocod3r'];
+
+// const findLogin = function (allLogins, loginToFind) {
+//   return allLogins.includes(loginToFind) ? 'Пользователь ${loginToFind} найден.' : 'Пользователь ${loginToFind} не найден.'
+// }
+// console.log(findLogin(logins, 'avocod3r'));
+// console.log(findLogin(logins, 'k1widab3st'));
+
+
+
+
+
+
+
+console.log("Функція checkFruit(fruit) приймає рядок з назвою фрукта (параметр fruit), і перевіряє, чи присутній такий фрукт в масиві fruits.")
+// Функція checkFruit(fruit) приймає рядок з назвою фрукта (параметр fruit), і перевіряє, чи присутній такий фрукт в масиві fruits.
+
+// Доповни код функції таким чином, що якщо:
+
+// фрукт присутній в масиві, то функція повертає true;
+// фрукт відсутній в масиві, то функція повертає false.
+// Оголошена функція checkFruit(fruit)
+// Виклик checkFruit("plum") повертає true
+// Виклик checkFruit("mandarin") повертає false
+// Виклик checkFruit("pear") повертає true
+// Виклик checkFruit("Pear") повертає false
+// Виклик checkFruit("apple") повертає true
+// Виклик функції checkFruit() з випадковим словом повертає правильне значення boolean
+// У функції використовувався метод includes
+
+function checkFruit(fruit) {
+  const fruits = ["apple", "plum", "pear", "orange"];
+
+  return fruits.includes(fruit); // Change this line
+}
+
+console.log(checkFruit("plum"));
+console.log(checkFruit("mandarin"));
+
+console.log('Задача: знайти спільні цифри в двох масивах.В циклі for використовувалися методи includes і push')
+// Спільними елементами масивів називають ті елементи, які присутні у всіх масивах.
+
+// Наприклад, у двох масивах [1, 3, 5] і [0, 8, 5, 3] спільними будуть числа 3 і 5, оскільки вони присутні в обох вихідних масивах. А числа 0, 1 і 8 присутні тільки в одному з масивів.
+
+// Напиши функцію getCommonElements(array1, array2), яка отримує два масиви довільної довжини в параметри array1 і array2, і повертає новий масив, що складається з тих елементів, які присутні в обох вихідних масивах.
+
+// Оголошена функція getCommonElements(array1, array2)
+// Виклик getCommonElements([1, 2, 3], [2, 4]) повертає [2]
+// Виклик getCommonElements([1, 2, 3], [2, 1, 17, 19]) повертає [1, 2]
+// Виклик getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) повертає [12, 27, 3]
+// Виклик getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) повертає [10, 30, 40]
+// Виклик getCommonElements([1, 2, 3], [10, 20, 30]) повертає []
+// Виклик функції getCommonElements() з випадковими двома масивами повертає правильний масив
+// В циклі for використовувалися методи includes і push
+function getCommonElements(array1, array2) {
+  // Change code below this line
+  let newArray = [];
+  for (let number of array1) {
+    if (array2.includes(number)) {
+      newArray.push(number);
+    }
+  }
+
+  return newArray
+
+
+ // Change code above this line
+}
+
+console.log('Напиши функцію getEvenNumbers(start, end), яка повертає масив усіх парних чисел від start до end. Парним вважається число, яке ділиться на 2 без остачі (10 % 2 === 0).')
+
+// Оголошена функція getEvenNumbers(start, end)
+// Виклик функції getEvenNumbers(2, 5) повертає [2, 4]
+// Виклик функції getEvenNumbers(3, 11) повертає [4, 6, 8, 10]
+// Виклик функції getEvenNumbers(6, 12) повертає [6, 8, 10, 12]
+// Виклик функції getEvenNumbers(8, 8) повертає [8]
+// Виклик функції getEvenNumbers(7, 7) повертає []
+// Виклик функції getEvenNumbers() з випадковими start і end повертає правильний масив
+function getEvenNumbers(start, end) {
+  // Change code below this line
+let newArray = [];
+ for (let i = start; i <= end; i += 1){
+   if (i % 2 === 0){
+     newArray.push(i);
+   }
+ }
+ return newArray;
+ }
+ console.log('Перервати виконання циклу можна в будь-який момент. Для цього існує оператор break,') 
+//  який повністю припиняє виконання циклу і передає управління на рядок за його тілом.
+
+//  У прикладі шукаємо число 3. Щойно виконається умова if, цикл припинить своє виконання (буде перерваний)
+//  for (let i = 0; i <= 5; i += 1) {
+//   console.log(i);
+
+//   if (i === 3) {
+//     console.log("Знайшли число 3, перериваємо виконання циклу");
+//     break;
+//   }
+// }
+
+// console.log("Лог після циклу");
+
+console.lof('Напиши функцію includes(array, value), яка робить те саме, що і метод масиву масив.includes(значення) - перевіряє, чи присутнє в масиві array значення value, повертаючи true, якщо присутнє, і false в іншому випадку.')
+
+// При виконанні цього завдання в тілі функції includes() не можна використовувати метод масив.includes(значення).
+
+// Оголошена функція includes(array, value)
+// Виклик includes([1, 2, 3, 4, 5], 3) повертає true
+// Виклик includes([1, 2, 3, 4, 5], 17) повертає false
+// Виклик includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter") повертає true
+// Виклик includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus") повертає false
+// Виклик includes(["apple", "plum", "pear", "orange"], "plum") повертає true
+// Виклик includes(["apple", "plum", "pear", "orange"], "kiwi") повертає false
+// Виклик includes() для випадкового масиву з випадковим value повертає правильний boolean
+// У функції includes використовується for, return, але не метод масиву includes
+function includes(array, value) {
+  // Change code below this line
+for (let numbers of array) {
+  if ( numbers === value) {
+    return true;
+  }
+}
+  return false;
+  // Change code above this line
+}
