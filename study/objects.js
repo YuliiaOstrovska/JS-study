@@ -224,4 +224,194 @@ playlisttttssts.addTrack('трек5');
 console.log(playlisttttssts.getTrackCount());
 
 
-console.log('---ПЕРЕБОР МАСИВІВ--- (L1 time code 1:02:39')
+console.log('---ПЕРЕБОР МАСИВІВ--- ')
+// для перебора не використовувати for...in.
+const feedback = {
+    good: 5,
+    neutral: 10,
+    bad: 3,
+}
+let totalFeedback = 0;
+let totalNumbers = 0;
+// щоб достукатись до ключів обєкта є спеціальна конструкція Object.keys()
+
+const keys = Object.keys(feedback);
+console.log(keys);
+// Після того як ми достукались до ключів, ми можемо їх перебрати:
+for (const key of keys) {
+    console.log(key);
+    // щоб достукатись до властивостей ключа використовуємо квадратні дужки []
+    console.log(feedback[key]);
+    // порахуємо загальну кількість feedbacks. Для цього попередньо створюємо змінну let totalFeedback = 0;
+    totalFeedback += (feedback[key]);
+}
+console.log(totalFeedback);
+
+// Часто ключі нам не потрібні, а потрібні саме значення влючів. для цього використовуємо конструкцію: Object.values
+const values = Object.values(feedback);
+console.log(values);
+// якщо задача сплюсувати всі значення, використовуємо просто Object.values, потім перебираємо for...of і далі плюсуємо
+for (const value of values) {
+    console.log(value);
+    totalNumbers += value;
+       
+}
+console.log(totalNumbers);
+
+// є ще Object.entries - но він дуже рідко використовується. Це коли масив масива отримувати і ключі і значення.
+// практично все в бекенді - це масив обєктів
+console.log('---МАСИВ ОБЄКТІВ--- ')
+
+const friends = [
+    { name: 'Mango', online: false },
+    { name: 'Kiwi', online: true },
+    { name: 'Poly', online: true },
+    { name: 'Ajax', online: false },
+];
+friends[1].newprop = 666;
+console.table(friends);
+// перебираємо масиви обєктів
+for (const friend of friends) {
+    console.log(friend);
+    console.log(friend.name);
+    console.log(friend.online);
+    friend.newprop = 555;
+    
+}
+
+console.table(friends);
+// Обєкт - є сложним мавсивом. for...of ми достукались до кожного масива окремо. і ми можемо сам масив змінити (friend.newprop = 555;). Тобто, щоб добавити щось в кожен масив ми можемо використовувати for..of хоча він не дозволяє змінювати масиви прості.
+// Якщо ми хочемо добавити нове значення лише одному масиву, то використовуємо індекс масиву - (friends[1].newprop = 555;) - використовуємо не одного друга, а саме масив друзів та індекс конкретного, який нам потрібен.
+
+// Також ми можемо достукатись і до властивостей масивів, використовуючи конструкцію console.log(friend.name) console.log(friend.online)
+
+console.log('ЗАДАЧА: Знайти друга по імені')
+// Є функція і потрібно повернути значення true якщо знайшли і false якщо не знайшли. includes не підходить, тому що цей метод шукає значення в примітивах, а не масивах. 
+// він буквально зрівнює { name: 'Mango', online: false } === 'Poly' - тому завжди буде false. він не шукає в глибину масива
+const findFriendByName = function (allFriends, name) {
+    for (const friend of allFriends) {
+        // console.log(friend.name);
+        if (friend.name === name) {
+            return 'Знайшли!';
+        }
+    }
+    return 'Не знайшли!';
+};
+
+console.log(findFriendByName(friends, 'Poly'));
+console.log(findFriendByName(friends, 'Chelsy'));
+// 1. перебираємо масив по ключу .name (console.log(friend.name) і добавляємо правило по якому шукаємо саме за ключом .name). 
+console.log('ЗАДАЧА:Зі всього масиву друзів отримати всі імена друзів')
+// 1. перебираємо for...of
+
+const getAllNames = function (alllFriends){
+    const names = [];
+    for (const friend of alllFriends) {
+        // console.log(friend.name);
+        names.push(friend.name);
+    
+         
+}
+return names;
+
+}
+console.log(getAllNames(friends));
+// Objects.value не можна, тому що вона і значення online добавить. Коли у нас є один обєкт   зі значеннями - тоді Objects.value
+console.log('ЗАДАЧА: Отримати всих друзів, які онлайн. Не лише імяне, а весь масив')
+
+const getOnlineFriends = function (allllFriends){
+    const onlineFriends = [];
+    for (const friend of allllFriends) {
+        // console.log(friend);
+        console.log(friend.online);
+        if (friend.online) {
+            onlineFriends.push(friend);
+        };
+      
+};
+return onlineFriends;
+
+}
+console.log(getOnlineFriends(friends));
+console.log('ЗАДАЧА: Отримати всих друзів, які OFонлайн. Не лише імяне, а весь масив')
+const getOfflineFriends = function (alllllFriends) {
+    const offlineFriends = [];
+    for (const friend of alllllFriends) {
+        // console.log(friend);
+        console.log(friend.online);
+        if (!friend.online) {
+            offlineFriends.push(friend);
+        };
+      
+};
+return offlineFriends;
+
+}
+console.log(getOfflineFriends(friends));
+// Як вивести в одній функції друзів online  та offline не логічно, можна, але не логічно. Всі задачі писати для однакової функції = одна задача.
+// Але можливо
+const getFriendsByStatusLong = function (allSFriends) {
+    const friendsByStatus = {
+        online: [],
+        offline: [],
+    };
+
+for (const friend of allSFriends) {
+    if (friend.online) {
+        friendsByStatus.online.push(friend);
+    } else {
+        friendsByStatus.offline.push(friend);
+    };
+    
+};
+return friendsByStatus;
+};
+
+console.log(getFriendsByStatusLong(friends));
+
+// Скорочений варіант коду
+const getFriendsByStatusShort = function (allSFriends) {
+    const friendsByStatus = {
+        online: [],
+        offline: [],
+    };
+
+for (const friend of allSFriends) {
+    if (friend.online) {
+        friendsByStatus.online.push(friend);
+        continue;
+    };
+    friendsByStatus.offline.push(friend);
+};
+return friendsByStatus;
+};
+
+console.log(getFriendsByStatusShort(friends));
+console.log('ЗАДАЧА: Порахувати кількість значень')
+ const x = {
+    a: 1,
+    b: 2,
+    c: 50,
+    d: 100,
+ }
+ console.log(Object.keys(x).length);
+
+ console.log('ЗАДАЧА: Корзина товарів. методи: getItems, add, remove, clear, countTotalPrice, increaseQuantity, decreaseQuantity')
+
+ const cart = {
+    items: [],
+    getItems() {},
+    add(product) {},
+    remove(productName) {},
+    clear() {},
+    countTotalPrice() {},
+    increaseQuantity(productName) {},
+    decreaseQuantity(productName) {},
+
+ };
+
+
+ cart.add({ name: 'apple', price: 50 });
+ cart.add({ name: 'lime', price: 60 });
+ cart.add({ name: 'lime', price: 60 });
+ cart.add({ name: 'strawberry', price: 110 });
