@@ -1326,7 +1326,7 @@ const atTheOldToad38 = {
   console.log('ЗАДАЧА 39.3. ВИДАЛЯЄМО ЗІЛЛЯ»')
 //   Доповни метод removePotion(potionName) таким чином, щоб він видаляв зілля potionName з масиву зілля у властивості potions.
 
-const atTheOldToad = {
+const atTheOldToad39 = {
     potions: ["Speed potion", "Dragon breath", "Stone skin"],
     removePotion(potionName) {
       // Change code below this line
@@ -1339,7 +1339,7 @@ const atTheOldToad = {
   };
   console.log('ЗАДАЧА 40.3. ОНОВЛЮЄМО ЗІЛЛЯ')
 //   Доповни метод updatePotionName(oldName, newName) таким чином, щоб він оновлював назву зілля з oldName на newName в масиві зілля у властивості potions.
-const atTheOldToad = {
+const atTheOldToad40 = {
     potions: ["Speed potion", "Dragon breath", "Stone skin"],
     updatePotionName(oldName, newName) {
       // Change code below this line
@@ -1382,7 +1382,7 @@ const atTheOldToad = {
 // Для вихідного об'єкта після виклику методу atTheOldToad.updatePotionName("Dragon breath", "Polymorth"), у властивості potions буде масив [{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 } ]
 // Для вихідного об'єкта після виклику методу atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"), у властивості potions буде масив [{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 } ]
 
-const atTheOldToad = {
+const atTheOldToad41 = {
     potions: [
       { name: "Speed potion", price: 460 },
       { name: "Dragon breath", price: 780 },
