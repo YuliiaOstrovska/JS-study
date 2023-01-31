@@ -333,7 +333,7 @@ return onlineFriends;
 
 }
 console.log(getOnlineFriends(friends));
-console.log('ЗАДАЧА: Отримати всих друзів, які OFонлайн. Не лише імяне, а весь масив')
+console.log('ЗАДАЧА: Отримати всих друзів, які OFонлайн. Не лише імя, а весь масив')
 const getOfflineFriends = function (alllllFriends) {
     const offlineFriends = [];
     for (const friend of alllllFriends) {
