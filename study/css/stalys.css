@@ -1,0 +1,17 @@
+.magic-btn {
+    background-color: blue;
+    color: azure;
+};
+
+.site-nav_link---current {
+    color:brown;
+}
+
+.color-picker__option {
+    display: inline-block;
+    width: 120px;
+    height: 60px;
+    margin: 4px;
+    outline: none;
+    cursor: pointer;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/study/css/stalys.css">
+    <title>DOM</title>
+</head>
+<body>
+    <button type="button" class="magic-btn js-magic-btn">Магія</button>
+    <a class=site-nav_link>До</a>
+
+    <div class="hero"></div>
+    <ul id="menu" class="site-nav">
+        <li class="site-nav_item">
+            <a href="/about" class=site-nav_link>Про нас</a>
+        </li>
+        
+        <li class="site-nav_item">
+            <a href="/portfolio" class=site-nav_link>Портфоліо</a>
+        </li>
+        <li class="site-nav_item">
+            <a href="/contacts" class=site-nav_link>Контакти</a>
+        </li>
+        
+      </ul>
+
+      <!-- ----2.Свойства елементів---- -->
+
+      <section class="hero">
+        <h1 class="hero_title">Навушники</h1>
+        <img src="/image/marketing.jpg" alt="market" class="hero_image">
+      </section>
+
+      <a href="" class=site-nav_link>Після</a>
+
+<!-- ---3. data-атрибути---- -->
+<div class="js-action">
+    <button type="button" data-action="add">Створити</button>
+    <button type="button" data-action="remove">Видалити</button>
+    <button type="button" data-action="edit">Редагувати</button>
+</div>
+
+<input type="text" class="js-input">
+
+<!-- Колекція елементів -->
+<div class="color-picker js-color-picker"></div>
+
+<!-- ---ПРАКТИКА---
+1. Створення колекції товарів. -->
+<artical class="product">
+    <h2 class="product_name">Назва</h2>
+    <p class="product__descr">Опис</p>
+    <p class="product__price">Ціна:</p>
+</artical>
+
+<div class="js-products"></div>
+
+<!-- innerHTML insertAdjacentHTML-->
+<h2 class="titleI-inner">innerHTML строка <span>innerHTML заголовок</span></h2>
+
+
+<!-- Мастерская таблиць транзакцій -->
+<table class="transaction-table js-transaction-table">
+    <thead>
+        <tr>
+            <tr>ID</tr>
+            <tr>Сума</tr>
+            <tr>Дата</tr>
+            <tr>Хто</tr>
+            <tr>Ти транзакціі</tr>
+            <tr>Імя рахунку</tr>
+            <tr>Номер рахунку</tr>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ID</td>
+            <td>Сума</td>
+            <td>Дата</td>
+            <td>Хто</td>
+            <td>Ти транзакціі</td>
+            <td>Імя</td>
+            <td>Номер рахунку</td>
+        </tr>
+    </tbody>
+</table>
+
+
+    <script src="./m6_DOM.js" type="module"></script>
+    <script src="./m6testproducts.js" type="module"></script>
+    <script src="./m6_DOM_transactions.js" type="module"></script>
+</body>
+</html>
