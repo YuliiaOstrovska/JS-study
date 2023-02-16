@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/m6_events_input_Repeta.css">
+    <title>Input Repeta</title>
+    <style>
+        .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    transition: background-color 200ms ease-in;
+    };
+    .box--active {
+        background-color: blueviolet;
+        width: 150px;
+        height: 150px;
+    }
+
+    .inner-box {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+    <p><a href="/">На головну</a></p>
+
+    
+    <button class="js-target-btn">Цільва кнопка</button>
+    <button class="js-add-listener">Додати слушателя</button>
+    <button class="js-remove-listener">Снять слушателя</button>
+
+    <!-- event form -->
+
+    <form class="js-register-form" autocomplete="off">
+        <div role="group">
+            <label>
+                Пошта
+                <input type="email" name="email">
+            </label>
+            <label>
+                Пароль
+                <input type="password" name="password">
+            </label>
+        </div>
+        <br>
+        <div role="group">
+            <b>Тип підписки</b>
+            <label>
+                <input type="radio" name="subscription" value="free">
+                Free
+                
+            </label>
+            <label>
+                <input type="radio" name="subscription" value="basic">
+                Basic
+            </label>
+            <label>
+                <input type="radio" name="subscription" value="pro">
+                Pro
+            </label>
+        </div>
+
+        <br>
+        <button type="submit">Зареєструватись</button>
+    </form>
+
+    <!-- Події Input. ТОбто полів ввода -->
+
+    <label>
+        Імя
+        <input type="text" class="js-input">
+    </label>
+
+    <p>
+        <label>
+            <input type="checkbox" class="js-license">
+            Приймаю ліцензійні умови 
+        </label>
+    </p>
+
+    <button type="submit" disabled class="js-button">
+        Зареєструватись як<span>Анонім</span>
+    </button>
+
+    <!-- Події клавіатури -->
+
+    <button class="js-clear">Очистити напис</button>
+    <p class="output js-output"></p>
+
+    <!-- Події миші -->
+    <div class="box js-box">
+        <div class="inner-box"></div>
+
+    </div>
+
+
+    <script src="./m6_events_input_Repeta.js" type="module"></script>
+</body>
+</html>
