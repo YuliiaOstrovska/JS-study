@@ -1,0 +1,36 @@
+{
+  "name": "js-study",
+  "description": "",
+  "version": "1.0.0",
+  "main": "m8.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prem8": "echo \"Це preкоманда\"",
+    "postm8": "echo \"Це postкоманда\"",
+    "m8": "node m8.js",
+    "script-1": "echo \"Це script-1\"",
+    "script-2": "echo \"Це script-2\"",
+    "all": "npm run script-1 && npm run script-2",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuliiaOstrovska/JS-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuliiaOstrovska/JS-study/issues"
+  },
+  "homepage": "https://github.com/YuliiaOstrovska/JS-study#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "joi": "^17.8.3",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
